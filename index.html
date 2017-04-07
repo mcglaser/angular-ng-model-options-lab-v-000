@@ -13,7 +13,6 @@
             font-size: 12px;
             margin-top: 20px;
         }
-
         ul {
             list-style: none;
         }
@@ -23,7 +22,7 @@
 
     <div ng-app="app" class="app">
         <div ng-controller="SearchController as search">
-            <input ng-model="search.query" />
+            <input ng-model="search.query" ng-model-options="{ updateOn: 'blur default', debounce: { 'default': 500, 'blur': 0 }}"/>
 
             {{ search.query }}
         </div>
